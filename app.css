@@ -43,8 +43,42 @@ body{
     margin: 0.5em 0;
     background-color: #fff;
     border: none;
+    color: #0289ff;
 }
 .container .innercontainer a button:hover{
     background-color: transparent;
     border: 0.1em solid #fff;
+    color: #fff;
+}
+
+/* FORM STYLING */
+form{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form > * {
+    text-decoration: none;
+    cursor: pointer;
+    width: 13em;
+    height: 3em;
+    margin: 0.5em 0;
+    background-color: #fff;
+    border: none;
+    color: #0289ff;
+}
+form #username{
+    cursor:text;
+    padding: 0.4em;
+    box-shadow: 0 0 5px 1px rgb(75, 125, 167);
+}
+form input::placeholder{
+    color: #aaa;
+}
+form #savescore:hover{
+    background-color: transparent;
+    border: 0.1em solid #fff;
+    color: #fff;
 }

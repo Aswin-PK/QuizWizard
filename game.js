@@ -75,7 +75,8 @@ startGame = () =>{
 getNewQuestions = () =>{
     if(availableQuestion == 0 || questionCounter >= maxQuestions){
         //Will go to home page when all questions are answered
-        return window.location.assign("/index.html");
+        localStorage.setItem("recentScore",score);
+        return window.location.assign("/end.html");
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random()*availableQuestion.length);
