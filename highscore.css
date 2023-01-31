@@ -1,0 +1,30 @@
+.container .innercontainer h1{
+    text-align: center;
+    margin-bottom: 0.1;
+}
+.container .innercontainer hr{
+    width: 100%;
+    border-top: 1px solid #fff;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+.highScoreList{
+    width: 11em;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.highScoreList li .lists{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.highScoreList li .lists .name{
+    float: left;
+    text-transform: capitalize;
+}
+.highScoreList li .lists .score{
+    float: right;
+}
