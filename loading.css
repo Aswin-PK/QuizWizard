@@ -1,0 +1,24 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading{
+    width: 5em;
+    height: 5em;
+    border: 1em solid rgba(213, 216, 216, 0.33);
+    border-radius: 50%;
+    border-top: 1em solid #56a5eb;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}

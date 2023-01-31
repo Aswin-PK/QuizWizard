@@ -25,7 +25,7 @@ body{
     width: 100%;
     height: 60%;
     /* background-color: ; */
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -98,4 +98,27 @@ body{
 .container .innercontainer .scorecontainer h3{
     color: #007be6;
     font-size: 2em;
+}
+
+
+/* loading..styles.... */
+
+.container #loading{
+    width: 5em;
+    height: 5em;
+    border: 1em solid rgba(213, 216, 216, 0.33);
+    border-radius: 50%;
+    border-top: 1em solid #56a5eb;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.container .hidden{
+    display: hidden;
 }
