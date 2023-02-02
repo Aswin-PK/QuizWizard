@@ -28,6 +28,7 @@ saveHighScore = (e)=>{
     highScore.splice(5);
     localStorage.setItem("highScores", JSON.stringify(highScore));
     // console.log(highScore);
-    window.location.assign("/");
-
+    setTimeout( () => {
+        window.location.assign("index.html");
+    },500);
 };
