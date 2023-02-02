@@ -1,13 +1,13 @@
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice'));
-const solvedandtotal = document.getElementById('solvedandtotal');
+const solvedAndTotal = document.getElementById('solvedandtotal');
 const scores = document.getElementById('scores');
 
 const loading = document.getElementById('loading');
 const game = document.getElementById('innercontainer');
 
 
-console.log(choices);
+// console.log(choices);
 let currentQuestion = {};
 let score = 0;
 let questionCounter = 0;
@@ -19,7 +19,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=18&type=multiple")
         return res.json();
     })
     .then(loadedQuestions => {
-        console.log(loadedQuestions.results);
+        // console.log(loadedQuestions.results);
         questions = loadedQuestions.results.map(loadedQuestion =>{
             const formattedQuestions ={
                 question: loadedQuestion.question
@@ -60,7 +60,7 @@ startGame = () =>{
 };
 getNewQuestions = () =>{
     if(availableQuestion == 0 || questionCounter >= maxQuestions){
-        //Will go to home page when all questions are answered
+        //Will go to highscore page when all questions are answered
         localStorage.setItem("recentScore",score);
         return window.location.assign("/end.html");
     }
@@ -73,12 +73,12 @@ getNewQuestions = () =>{
     acceptingAnswers = true;
 
     choices.forEach(choice =>{
-        const number = choice. dataset['number']
+        const number = choice. dataset['number'];
         choice.innerText = currentQuestion['choice'+number];
-    })
+    });
 
     availableQuestion.splice(questionIndex, 1);
-    solvedandtotal.innerText = `${questionCounter}/${maxQuestions}`;
+    solvedAndTotal.innerText = `${questionCounter}/${maxQuestions}`;
 };
 
 choices.forEach(choice => {
@@ -88,15 +88,22 @@ choices.forEach(choice => {
         
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        // console.log(selectedAnswer);
-
-        const newClass = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-        console.log(newClass);
+        console.log(currentQuestion);
+        console.log(currentQuestion.answer);
+        const option = document.getElementById(currentQuestion.answer);
+        const newClass = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         if(newClass == "correct")
+        {
             score +=correctBonus;
+        }
+        else
+        {
+            option.parentElement.classList.add("correct");
+        }
         selectedChoice.parentElement.classList.add(newClass);
         setTimeout( ()=>{
             selectedChoice.parentElement.classList.remove(newClass);
+            option.parentElement.classList.remove("correct");
             getNewQuestions();
             scores.innerText = score;
         }, 1000);
