@@ -7,19 +7,21 @@ const loading = document.getElementById('loading');
 const game = document.getElementById('innercontainer');
 
 
-// console.log(choices);
 let currentQuestion = {};
 let score = 0;
+const correctAnswerBonus = 5;
 let questionCounter = 0;
 let availableQuestion = [];
 let acceptingAnswers = true;
 let questions = [];
+let maxQuestions;
+
+// fetching questions and answers using Open Trivia DB API
 fetch("https://opentdb.com/api.php?amount=20&category=18&type=multiple")
     .then(res => {
         return res.json();
     })
     .then(loadedQuestions => {
-        // console.log(loadedQuestions.results);
         questions = loadedQuestions.results.map(loadedQuestion =>{
             const formattedQuestions ={
                 question: loadedQuestion.question
@@ -44,16 +46,11 @@ fetch("https://opentdb.com/api.php?amount=20&category=18&type=multiple")
     })
 
 
-const correctBonus = 5;
-let maxQuestions;
-
 startGame = () =>{
     questionCounter = 0;
     score = 0;
     availableQuestion = [...questions];
-    // console.log(availableQuestion);
     maxQuestions = availableQuestion.length;
-    // question.innerText = availableQuestion.question;
     getNewQuestions();
     game.style.display ="flex";
     loading.style.visibility ="hidden";
@@ -66,9 +63,7 @@ getNewQuestions = () =>{
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random()*availableQuestion.length);
-    // console.log(questionIndex);
     currentQuestion = availableQuestion[questionIndex];
-    console.log(currentQuestion);
     question.innerText = currentQuestion.question;
     acceptingAnswers = true;
 
@@ -88,13 +83,11 @@ choices.forEach(choice => {
         
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        console.log(currentQuestion);
-        console.log(currentQuestion.answer);
         const option = document.getElementById(currentQuestion.answer);
         const newClass = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         if(newClass == "correct")
         {
-            score +=correctBonus;
+            score +=correctAnswerBonus;
         }
         else
         {
