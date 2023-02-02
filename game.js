@@ -54,7 +54,7 @@ startGame = () =>{
     maxQuestions = availableQuestion.length;
     getNewQuestions();
     game.style.display ="flex";
-    loading.style.visibility ="hidden";
+    loading.style.display ="none";
 };
 
 // for loading next new questions

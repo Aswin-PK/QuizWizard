@@ -6,13 +6,16 @@
 }
 body{
     width:100vw;
-    height:100vw;
+    height:100vh;
     background-color: #56a5eb;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .container{
-    width:100vw;
-    height:100vh;
+    width: 80%;
+    height:70%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +27,7 @@ body{
 .container .innercontainer{
     width: 50%;
     height: 50%;
-    /* background-color: ; */
+    /* background-color: yellow; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +37,7 @@ body{
 /* box-shadow: 0 0 10px 5px  #3e83bf; */
 .container .innercontainer h1{
     font-size: 3em;
-    margin: 0.5em;
+    margin-bottom: 0.5em;
 }
 .container .innercontainer a button{
     text-decoration: none;
@@ -84,4 +87,3 @@ form #savescore:hover{
     color: #fff;
 }
 
-/* For high score page styling */
