@@ -2,6 +2,8 @@ const printScoreList = document.getElementById('highScoreList');
 const highScoreList = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // for getting names and score and printing in html format
+// A syling is given to these html classes
+
 printScoreList.innerHTML = 
     highScoreList.map(score =>{
         return `<li>

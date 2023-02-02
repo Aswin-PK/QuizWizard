@@ -45,6 +45,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=18&type=multiple")
         console.error(err);
     })
 
+//starting point 
 
 startGame = () =>{
     questionCounter = 0;
@@ -55,6 +56,8 @@ startGame = () =>{
     game.style.display ="flex";
     loading.style.visibility ="hidden";
 };
+
+// for loading next new questions
 getNewQuestions = () =>{
     if(availableQuestion == 0 || questionCounter >= maxQuestions){
         //Will go to highscore page when all questions are answered
@@ -87,10 +90,11 @@ choices.forEach(choice => {
         const newClass = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         if(newClass == "correct")
         {
-            score +=correctAnswerBonus;
+            score += correctAnswerBonus;
         }
         else
         {
+            // for highlighting correct answer
             option.parentElement.classList.add("correct");
         }
         selectedChoice.parentElement.classList.add(newClass);

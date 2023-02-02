@@ -3,7 +3,6 @@ const savescore = document.getElementById("savescore");
 const finalscore = document.getElementById("finalscore");
 const recentscore = localStorage.getItem("recentScore");
 const highScore = JSON.parse(localStorage.getItem("highScores")) || [];
-// localStorage.setItem("highScores", JSON.stringify([]));
 console.log(highScore)
 
 
