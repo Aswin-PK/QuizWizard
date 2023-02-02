@@ -62,7 +62,7 @@ getNewQuestions = () =>{
     if(availableQuestion == 0 || questionCounter >= maxQuestions){
         //Will go to highscore page when all questions are answered
         localStorage.setItem("recentScore",score);
-        return window.location.assign("/end.html");
+        return window.location.assign("end.html");
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random()*availableQuestion.length);
