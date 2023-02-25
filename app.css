@@ -6,7 +6,7 @@
 }
 body{
     width:100vw;
-    height:100vw;
+    height:100vh;
     background-color: #56a5eb;
     color: #fff;
     display: flex;
