@@ -14,7 +14,7 @@ The questions for the quiz is related to computer science field.
 .........................
 
 
-Think you're an expert in this field? Prove it by acing our quiz!😎
+Think you're an expert in this field? Prove it by acing the quiz!😎
 
 
 .........................
