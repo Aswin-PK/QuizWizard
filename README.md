@@ -2,7 +2,7 @@
 
 This is a simple quiz website developed using HTML, CSS and JavaScript. It uses the localStorage of the user's system to store data.
 
-Link: aswin-pk.github.io/QuizWizard/
+Link: <a href="aswin-pk.github.io/QuizWizard/">aswin-pk.github.io/QuizWizard/</a>
 
 The landing page looks like this:
 
