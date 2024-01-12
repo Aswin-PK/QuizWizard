@@ -18,7 +18,7 @@ body{
     height: 90%;
     max-width: 80rem;
     margin: 0 auto;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,6 +31,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 3vh;
     padding: 0 5%;
 }
 .container .innercontainer #question{

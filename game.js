@@ -6,6 +6,11 @@ const scores = document.getElementById('scores');
 const loading = document.getElementById('loading');
 const game = document.getElementById('innercontainer');
 
+const gk = document.getElementById("gk");
+const program = document.getElementById("program");
+const math = document.getElementById("math");
+const history = document.getElementById("history");
+const sports = document.getElementById("sports");
 
 let currentQuestion = {};
 let score = 0;
@@ -69,7 +74,7 @@ getNewQuestions = () =>{
     questionCounter++;
     const questionIndex = Math.floor(Math.random()*availableQuestion.length);
     currentQuestion = availableQuestion[questionIndex];
-    question.innerText = currentQuestion.question;
+    question.innerHTML = currentQuestion.question;
     acceptingAnswers = true;
 
     choices.forEach(choice =>{
