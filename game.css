@@ -33,7 +33,7 @@ body{
 .container .innercontainer{
     width: 100%;
     min-height: 60%;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: none;
     align-items: center;
     justify-content: center;
