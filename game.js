@@ -60,6 +60,7 @@ startGame = () =>{
     getNewQuestions();
     game.style.display ="flex";
     loading.style.display ="none";
+    loading.style.display ="none";
 };
 
 // for loading next new questions
@@ -113,3 +114,4 @@ choices.forEach(choice => {
         }, 1000);
     });
 });
+
